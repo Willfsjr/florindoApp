@@ -1,0 +1,81 @@
+# Descrição do Projeto - Sistema de Contagem de Estoque
+
+Este documento descreve em detalhes a estrutura do projeto, explicando a função de cada pasta e arquivo.
+
+---
+
+## 📌 Estrutura do Backend (/backend)
+O backend é um servidor **Node.js com Express.js**, responsável por processar as requisições do frontend e interagir com o banco de dados PostgreSQL no CapRover.
+
+### 📂 /backend/src/
+- **/controllers/** → Contém a lógica de controle das requisições feitas à API.
+  - **produtoController.js** → Controla a lógica de listagem e registro de produtos.
+
+- **/models/** → Contém a configuração do ORM utilizado para acessar o banco de dados.
+  - **prisma.js** → Configuração do **Prisma ORM**, que gerencia a conexão com o PostgreSQL.
+
+- **/routes/** → Define as rotas da API, indicando quais URLs são acessíveis no backend.
+  - **produtoRoutes.js** → Define os endpoints para buscar e salvar produtos.
+
+- **/middlewares/** → Contém funções auxiliares que interceptam requisições.
+  - **errorHandler.js** → Middleware que trata erros e retorna respostas apropriadas.
+
+- **server.js** → Arquivo principal do backend, onde o servidor Express.js é iniciado.
+
+---
+
+## 📌 Configuração do Prisma (/backend/prisma)
+- **schema.prisma** → Define o modelo das tabelas do banco de dados (Produtos, Contagens, etc.).
+- **migrations/** → Contém os arquivos de migração para atualização do banco.
+
+---
+
+## 📌 Arquivos Importantes do Backend
+- **.env** → Contém variáveis de ambiente, incluindo a conexão com o banco.
+- **package.json** → Lista as dependências do backend.
+- **nodemon.json** → Configuração para reiniciar automaticamente o backend em modo de desenvolvimento.
+- **Dockerfile** → Define as instruções para rodar o backend em um contêiner Docker no CapRover.
+
+---
+
+## 📌 Estrutura do Frontend (/frontend)
+O frontend é uma aplicação **React.js com Vite**, responsável por exibir os produtos e permitir a contagem.
+
+### 📂 /frontend/src/
+- **/components/** → Contém componentes reutilizáveis da interface.
+  - **ProdutoLista.js** → Renderiza a lista de produtos disponíveis para contagem.
+
+- **/pages/** → Contém as páginas principais do sistema.
+  - **Home.js** → Página principal onde o usuário visualiza e insere contagens.
+
+- **/services/** → Gerencia as chamadas à API do backend.
+  - **api.js** → Define a conexão com o backend via **Axios**.
+
+- **App.js** → Configuração do **React Router** e estrutura do frontend.
+
+---
+
+## 📌 Arquivos Importantes do Frontend
+- **index.html** → Arquivo principal do frontend, onde o React é injetado.
+- **vite.config.js** → Configuração do Vite para otimizar o desenvolvimento.
+- **package.json** → Lista as dependências do frontend.
+- **Dockerfile** → Define as instruções para rodar o frontend em um contêiner Docker no CapRover.
+
+---
+
+## 📌 Configuração do Deploy no CapRover (/caprover)
+O **CapRover** será usado para hospedar a aplicação e o banco de dados PostgreSQL no servidor Ubuntu.
+
+- **docker-compose.yml** → Arquivo que define os serviços a serem rodados no CapRover.
+- **caprover-config.json** → Configuração personalizada do CapRover para o deploy.
+
+---
+
+## 📌 Outros Arquivos
+- **descricao-projeto.txt** → Este documento, que descreve a estrutura do projeto.
+- **README.md** → Instruções gerais sobre como rodar e configurar o projeto.
+
+---
+
+# 📌 Conclusão
+Este projeto foi estruturado de forma modular e escalável, utilizando **React.js no frontend**, **Node.js no backend**, **PostgreSQL no CapRover** e **deploy automatizado** via Docker. Cada pasta e arquivo tem uma função específica, garantindo organização e fácil manutenção.

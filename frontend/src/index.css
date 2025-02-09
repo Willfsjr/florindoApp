@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Definições Globais */
+:root {
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --text-color: #213547;
+  --background-color: #ffffff;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --border-radius: 8px;
+  --padding-default: 10px;
+
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fundo da Tela de Login */
+.login-background {
+  position: fixed; /* Ocupa a tela toda */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/public/assets/background-login.png"); /* Verifique se está na pasta `public/` */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Removendo fundo do body */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Formulário de Login */
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Garante que o formulário fique acima da imagem */
+}
